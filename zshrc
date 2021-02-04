@@ -102,3 +102,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+
+# Insert sudo at the beginning of the line.
+sudo-command-line() {
+[[ -z $BUFFER  ]] && zle up-history
+[[ $BUFFER != sudo\ *  ]] && BUFFER="sudo $BUFFER"
+zle end-of-line                 # Move cursor to line end
+}
+zle -N sudo-command-line
+# Key = [Esc][Esc]
+bindkey "\e\e" sudo-command-line
+
