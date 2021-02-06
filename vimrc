@@ -78,8 +78,8 @@ set cursorline
 
 colorscheme molokai
 " colorscheme dracula
-highlight Normal guibg=Black
-highlight LineNr guibg=Black
+"highlight Normal guibg=Black
+"highlight LineNr guibg=Black
 
 
 " YouCompleteMe config
